@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Saheli - Your English Learning Friend</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="parrot-mascot">🦜</div>
+                <h1 class="app-title">English Saheli</h1>
+                <p class="app-subtitle" id="appSubtitle">ତ��ମର ଇଂରାଜୀ ବନ୍ଧୁ</p>
+            </div>
+            
+            <div class="header-right">
+                <button class="language-toggle" id="langToggle">
+                    <i class="fas fa-language"></i>
+                    <span id="langText">ଓଡ଼ିଆ</span>
+                </button>
+                <button class="settings-btn" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- User Profile Section -->
+        <section class="user-profile">
+            <div class="profile-card">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h2 class="welcome-text" id="welcomeText">ନମସ୍କାର,</h2>
+                    <h3 class="user-name" id="userName">Learning Friend!</h3>
+                    <button class="edit-name-btn" id="editNameBtn">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value" id="totalStars">0</div>
+                    <div class="stat-label" id="starsLabel">Stars</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-value" id="streakDays">0</div>
+                    <div class="stat-label" id="streakLabel">Day Streak</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-value" id="totalBadges">0</div>
+                    <div class="stat-label" id="badgesLabel">Badges</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Word Section -->
+        <section class="daily-word-section">
+            <div class="daily-word-card">
+                <div class="daily-word-header">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3 id="dailyWordTitle">ଆଜିର ଶବ୍ଦ (Word of the Day)</h3>
+                </div>
+                <div class="word-display">
+                    <div class="word-emoji">🍎</div>
+                    <div class="word-content">
+                        <h2 class="english-word">APPLE</h2>
+                        <p class="odia-meaning">ଆପଲ୍ / ସେଓ</p>
+                        <button class="listen-btn" id="listenWordBtn">
+                            <i class="fas fa-volume-up"></i>
+                            <span id="listenText">ଶୁଣ</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Levels Section -->
+        <section class="levels-section">
+            <h2 class="section-title" id="levelsTitle">
+                <i class="fas fa-layer-group"></i>
+                ତୁମର ଶିକ୍ଷା ଯାତ୍ରା (Learning Journey)
+            </h2>
+            
+            <div class="levels-grid">
+                
+                <!-- Level 1 -->
+                <div class="level-card unlocked" data-level="1">
+                    <div class="level-icon">��️</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 1</h3>
+                        <p class="level-name" id="level1Name">Alphabet Adventure</p>
+                        <p class="level-name-odia">ଅକ୍ଷର ଦୁଃସାହସିକ</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span> 
+                            <span id="completeText1">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(1)">
+                            <i class="fas fa-play"></i>
+                            <span id="startBtn1">ଆରମ୍ଭ କର</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/50</span>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="level-card unlocked" data-level="2">
+                    <div class="lock-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="level-icon">📖</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 2</h3>
+                        <p class="level-name" id="level2Name">Word World</p>
+                        <p class="level-name-odia">ଶବ୍ଦ ଜଗତ</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span>
+                            <span id="completeText2">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(2)">
+                            <i class="fas fa-lock"></i>
+                            <span id="lockedText2">ତାଲା ବନ୍ଦ</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/80</span>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="level-card unlocked" data-level="3">
+                    <div class="lock-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="level-icon">🖼️</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 3</h3>
+                        <p class="level-name" id="level3Name">Picture & Words</p>
+                        <p class="level-name-odia">ଚିତ୍ର ଓ ଶବ୍ଦ</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span>
+                            <span id="completeText3">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(3)">
+                            <i class="fas fa-lock"></i>
+                            <span id="lockedText3">ତାଲା ବନ୍ଦ</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/60</span>
+                    </div>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="level-card unlocked" data-level="4">
+                    <div class="lock-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="level-icon">✍️</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 4</h3>
+                        <p class="level-name" id="level4Name">Sentence Starters</p>
+                        <p class="level-name-odia">ବାକ୍ୟ ଆରମ୍ଭ</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span>
+                            <span id="completeText4">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(4)">
+                            <i class="fas fa-lock"></i>
+                            <span id="lockedText4">ତାଲା ବନ୍ଦ</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/70</span>
+                    </div>
+                </div>
+
+                <!-- Level 5 -->
+                <div class="level-card unlocked" data-level="5">
+                    <div class="lock-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="level-icon">📚</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 5</h3>
+                        <p class="level-name" id="level5Name">Story Time</p>
+                        <p class="level-name-odia">କାହାଣୀ ସମୟ</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span>
+                            <span id="completeText5">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(5)">
+                            <i class="fas fa-lock"></i>
+                            <span id="lockedText5">ତାଲା ବନ୍ଦ</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/50</span>
+                    </div>
+                </div>
+
+                <!-- Level 6 -->
+                <div class="level-card unlocked" data-level="6">
+                    <div class="lock-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="level-icon">🗣️</div>
+                    <div class="level-content">
+                        <h3 class="level-title">Level 6</h3>
+                        <p class="level-name" id="level6Name">Speaking & Writing</p>
+                        <p class="level-name-odia">କଥା ଓ ଲେଖା</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="0"></div>
+                        </div>
+                        <p class="progress-text">
+                            <span class="progress-percent">0%</span>
+                            <span id="completeText6">ସମ୍ପୂର୍ଣ୍ଣ</span>
+                        </p>
+                        <button class="start-btn" onclick="goToLevel(6)">
+                            <i class="fas fa-lock"></i>
+                            <span id="lockedText6">ତାଲା ବନ୍ଦ</span>
+                        </button>
+                    </div>
+                    <div class="level-stars">
+                        <span>⭐</span>
+                        <span class="star-count">0/90</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Quick Actions Section -->
+        <section class="quick-actions">
+            <h2 class="section-title" id="quickActionsTitle">
+                <i class="fas fa-bolt"></i>
+                ଦ୍ରୁତ କାର୍ଯ୍ୟ (Quick Actions)
+            </h2>
+            <div class="action-buttons">
+                <button class="action-btn" id="practiceBtn">
+                    <i class="fas fa-gamepad"></i>
+                    <span id="practiceText">ଅଭ୍ୟାସ କର</span>
+                </button>
+                <button class="action-btn" id="gamesBtn">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span id="gamesText">ଖେଳ</span>
+                </button>
+                <button class="action-btn" id="achievementsBtn">
+                    <i class="fas fa-trophy"></i>
+                    <span id="achievementsText">ପୁରସ୍କାର</span>
+                </button>
+                <button class="action-btn" id="progressBtn">
+                    <i class="fas fa-chart-line"></i>
+                    <span id="progressText">ପ୍ରଗତି</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Mascot Tip Section -->
+        <section class="mascot-tip">
+            <div class="mascot-bubble">
+                <div class="mascot-avatar">🦜</div>
+                <div class="tip-content">
+                    <h4 id="mascotName">Rani says:</h4>
+                    <p id="mascotTip">ପ୍ରତିଦିନ ୧୫ ମିନିଟ୍ ଅଭ୍ୟାସ କର! (Practice 15 minutes daily!)</p>
+                </div>
+                <button class="close-tip" id="closeTip">&times;</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="settingsTitle">⚙️ ସେଟିଂସ୍ (Settings)</h2>
+                <button class="close-modal" id="closeSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label for="soundToggle">
+                        <i class="fas fa-volume-up"></i>
+                        <span id="soundLabel">ଧ୍ୱନି (Sound)</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="musicToggle">
+                        <i class="fas fa-music"></i>
+                        <span id="musicLabel">ସଂଗୀତ (Music)</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="musicToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                        <span id="darkModeLabel">ଡାର୍କ ମୋଡ୍ (Dark Mode)</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <button class="reset-btn" id="resetProgress">
+                        <i class="fas fa-redo"></i>
+                        <span id="resetText">ପ୍ରଗତି ରିସେଟ୍ କରନ୍ତୁ (Reset Progress)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Name Edit Modal -->
+    <div class="modal" id="nameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="nameModalTitle">✏️ ନାମ ପରିବର୍ତ୍ତନ କରନ୍ତୁ (Edit Name)</h2>
+                <button class="close-modal" id="closeName">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="nameInput" placeholder="ତୁମର ନାମ ଲେଖ (Enter your name)" maxlength="20">
+                <button class="save-btn" id="saveName">
+                    <i class="fas fa-save"></i>
+                    <span id="saveText">ସେଭ୍ କରନ୍ତୁ (Save)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p id="footerText">Made with ❤️ for Odia Students | © 2024 English Saheli</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
